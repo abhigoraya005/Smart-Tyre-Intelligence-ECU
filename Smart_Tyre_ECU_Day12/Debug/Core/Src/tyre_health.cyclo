@@ -1,0 +1,3 @@
+../Core/Src/tyre_health.c:7:6:TyreHealth_Init	1
+../Core/Src/tyre_health.c:14:6:TyreHealth_Update	10
+../Core/Src/tyre_health.c:58:16:TyreHealth_GetData	1

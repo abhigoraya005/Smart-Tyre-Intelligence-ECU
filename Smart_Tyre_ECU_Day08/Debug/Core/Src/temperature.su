@@ -1,0 +1,2 @@
+../Core/Src/temperature.c:3:6:Temperature_Init	4	static
+../Core/Src/temperature.c:8:7:Temperature_GetValue	24	static

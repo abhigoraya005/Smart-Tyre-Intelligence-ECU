@@ -1,0 +1,4 @@
+../Core/Src/sensor_manager.c:14:17:Read_ADC_Channel	1
+../Core/Src/sensor_manager.c:37:6:SensorManager_Init	1
+../Core/Src/sensor_manager.c:47:6:SensorManager_Update	1
+../Core/Src/sensor_manager.c:69:16:SensorManager_GetData	1

@@ -1,0 +1,2 @@
+../Core/Src/vibration.c:3:6:Vibration_Init	1
+../Core/Src/vibration.c:8:7:Vibration_GetValue	1

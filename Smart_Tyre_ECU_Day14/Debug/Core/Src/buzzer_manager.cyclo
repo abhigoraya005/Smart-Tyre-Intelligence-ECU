@@ -1,0 +1,2 @@
+../Core/Src/buzzer_manager.c:7:6:Buzzer_Init	1
+../Core/Src/buzzer_manager.c:12:6:Buzzer_Update	2

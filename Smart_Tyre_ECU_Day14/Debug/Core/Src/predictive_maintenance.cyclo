@@ -1,0 +1,3 @@
+../Core/Src/predictive_maintenance.c:8:6:PredictiveMaintenance_Init	1
+../Core/Src/predictive_maintenance.c:18:6:PredictiveMaintenance_Update	7
+../Core/Src/predictive_maintenance.c:54:17:PredictiveMaintenance_GetData	1

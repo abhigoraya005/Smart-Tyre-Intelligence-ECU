@@ -1,0 +1,2 @@
+../Core/Src/ecu_manager.c:9:6:ECU_Init	8	static
+../Core/Src/ecu_manager.c:19:6:ECU_Run	8	static

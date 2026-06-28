@@ -1,0 +1,2 @@
+../Core/Src/load.c:3:6:Load_Init	4	static
+../Core/Src/load.c:8:7:Load_GetValue	16	static

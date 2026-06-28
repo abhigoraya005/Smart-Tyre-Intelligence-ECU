@@ -1,0 +1,2 @@
+../Core/Src/ecu_manager.c:14:6:ECU_Init	1
+../Core/Src/ecu_manager.c:29:6:ECU_Run	1

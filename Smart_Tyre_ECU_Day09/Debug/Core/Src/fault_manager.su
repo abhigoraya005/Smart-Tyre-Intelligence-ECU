@@ -1,0 +1,3 @@
+../Core/Src/fault_manager.c:7:6:FaultManager_Init	4	static
+../Core/Src/fault_manager.c:16:6:FaultManager_Update	32	static
+../Core/Src/fault_manager.c:31:11:FaultManager_GetData	16	static
