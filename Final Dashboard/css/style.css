@@ -1,0 +1,298 @@
+/* ============================================================
+   SMART TYRE INTELLIGENCE ECU — style.css
+   Automotive Dark Luxury Theme
+   ============================================================ */
+
+:root {
+  --bg-primary:    #03050a;
+  --bg-secondary:  #060912;
+  --card-bg:       rgba(10, 15, 28, 0.45);
+  --card-border:   rgba(255, 255, 255, 0.05);
+  --card-hover:    rgba(15, 23, 42, 0.6);
+
+  --blue:     #00BFFF;
+  --green:    #00FF7F;
+  --yellow:   #FFD93D;
+  --orange:   #FF8C00;
+  --red:      #FF3B30;
+  --cyan:     #00E5FF;
+  --purple:   #A855F7;
+  --white:    #FFFFFF;
+  --gray-100: #E2E8F0;
+  --gray-200: #94A3B8;
+  --gray-400: #64748B;
+  --gray-600: #334155;
+
+  --font-display: 'Orbitron', monospace;
+  --font-ui:      'Rajdhani', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+
+  --shadow-card: 0 12px 32px rgba(0,0,0,0.7);
+  --transition-normal: 0.25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--gray-100);
+  font-family: var(--font-ui);
+  font-weight: 400;
+  overflow-x: hidden;
+  min-height: 100vh;
+  user-select: none;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--gray-600); border-radius: 3px; }
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: rgba(4, 6, 12, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+}
+
+.header-brand { display: flex; align-items: center; gap: 14px; }
+.header-logo {
+  width: 42px; height: 42px;
+  border: 1.5px solid var(--blue);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,191,255,0.04);
+}
+.header-logo svg { width: 24px; height: 24px; }
+.header-title-group { display: flex; flex-direction: column; }
+.header-title {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  letter-spacing: 0.08em; color: var(--white);
+}
+.header-subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--gray-400);
+  margin-top: 2px;
+}
+
+.header-status-pills { display: flex; align-items: center; gap: 10px; flex: 1; justify-content: center; }
+.header-pill {
+  display: flex; align-items: center; gap: 7px;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.02);
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 600;
+  color: var(--gray-200);
+}
+.header-pill.connected {
+  border-color: rgba(0,255,127,0.3);
+  background: rgba(0,255,127,0.04);
+  color: var(--green);
+}
+.pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+.header-time-block { text-align: right; }
+.header-time { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white); }
+.header-date, .header-runtime { font-family: var(--font-mono); font-size: 10px; color: var(--gray-400); margin-top: 1px; }
+.header-runtime { color: var(--blue); }
+
+/* ══════════════════════════════════════════
+   MAIN GRID PANELS
+══════════════════════════════════════════ */
+#main {
+  display: grid;
+  grid-template-columns: 240px 1fr 250px;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+  height: calc(100vh - 62px);
+  overflow: hidden;
+}
+
+#sensor-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 250px;
+  gap: 10px;
+  padding: 10px 12px 0 12px;
+}
+
+#left-panel  { grid-column: 1; padding: 10px 0 10px 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+#center-panel { grid-column: 2; padding: 10px 10px; display: flex; flex-direction: column; gap: 10px; }
+#right-panel { grid-column: 3; padding: 10px 12px 10px 0; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+
+#charts-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 250px;
+  gap: 10px;
+  padding: 0 12px 8px 12px;
+}
+
+/* ══════════════════════════════════════════
+   CARD ARCHITECTURE
+══════════════════════════════════════════ */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  transition: border-color var(--transition-normal), background var(--transition-normal);
+}
+.card:hover { border-color: rgba(255,255,255,0.12); background: rgba(14, 22, 40, 0.55); }
+
+.card-label {
+  font-family: var(--font-display);
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.15em; color: var(--gray-400);
+}
+
+.sensor-card { padding: 12px 16px; }
+.sensor-card-inner { display: flex; align-items: flex-start; gap: 12px; }
+.sensor-icon-wrap { width: 36px; height: 36px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; }
+.sensor-icon-wrap svg { width: 20px; height: 20px; }
+.sensor-data { flex: 1; }
+.sensor-title { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.12em; color: var(--gray-400); }
+.sensor-value { font-family: var(--font-display); font-size: 24px; font-weight: 700; line-height: 1.1; margin: 2px 0; }
+.sensor-unit { font-size: 13px; font-weight: 400; opacity: 0.7; margin-left: 1px; }
+.sensor-normal { font-family: var(--font-mono); font-size: 9px; color: var(--gray-400); margin-bottom: 4px; }
+
+.sensor-badge {
+  display: inline-block; padding: 1px 8px; border-radius: 12px;
+  font-family: var(--font-display); font-size: 8px; font-weight: 700;
+}
+.badge-normal   { background: rgba(0,255,127,0.12); color: var(--green); border: 1px solid rgba(0,255,127,0.25); }
+.badge-high     { background: rgba(255,59,48,0.12);  color: var(--red);   border: 1px solid rgba(255,59,48,0.25); }
+.badge-warning  { background: rgba(255,217,61,0.12); color: var(--yellow); border: 1px solid rgba(255,217,61,0.25); }
+.badge-critical { background: rgba(255,59,48,0.18);  color: var(--red);   border: 1px solid rgba(255,59,48,0.4); }
+.badge-overload { background: rgba(255,140,0,0.12); color: var(--orange); border: 1px solid rgba(255,140,0,0.25); }
+
+.sensor-sparkline { width: 100%; height: 24px; margin-top: 4px; }
+
+/* ══════════════════════════════════════════
+   HEALTH PROFILE GAUGE
+══════════════════════════════════════════ */
+.health-card { text-align: center; padding: 12px 8px; }
+.health-gauge-wrap { position: relative; width: 130px; height: 75px; margin: 0 auto; overflow: hidden; }
+.health-gauge-canvas { width: 130px; height: 130px; margin-top: -55px; }
+.health-pct { font-family: var(--font-display); font-size: 26px; font-weight: 800; margin-top: -10px; }
+.health-status-badge { display: inline-block; padding: 2px 14px; border-radius: 12px; font-family: var(--font-display); font-size: 9px; font-weight: 700; margin-top: 4px; }
+
+/* ══════════════════════════════════════════
+   PANEL COMPONENT UTILITIES
+══════════════════════════════════════════ */
+.panel-section-title { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.12em; color: var(--gray-400); text-transform: uppercase; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px; }
+.fault-list, .maint-list { display: flex; flex-direction: column; gap: 4px; }
+.fault-item, .maint-item { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: var(--radius-sm); background: rgba(255,255,255,0.01); border: 1px solid transparent; }
+.fault-item.active { background: rgba(255,59,48,0.05); border-color: rgba(255,59,48,0.15); }
+.fault-icon, .maint-icon { width: 16px; height: 16px; }
+.fault-name, .maint-name { font-size: 11px; flex: 1; color: var(--gray-200); }
+.fault-status-icon { width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; }
+.fault-status-icon.ok { background: rgba(0,255,127,0.15); color: var(--green); }
+.fault-status-icon.fault { background: rgba(255,59,48,0.15); color: var(--red); }
+.maint-priority { font-family: var(--font-display); font-size: 8px; font-weight: 700; }
+.priority-none { color: var(--gray-400); }
+.priority-low { color: var(--green); }
+.priority-medium { color: var(--yellow); }
+.priority-high { color: var(--orange); }
+
+/* ══════════════════════════════════════════
+   CENTER STAGE: RICH MATTE BACKGROUND
+══════════════════════════════════════════ */
+#vehicle-stage {
+  flex: 1; 
+  border-radius: var(--radius-xl); /*[cite: 8] */
+  /* FIX: Use cover instead of contain to extend the road landscape completely edge-to-edge */
+  background: #040712 url('../car.jpeg') no-repeat center center;
+  background-size: cover; 
+  border: 1px solid rgba(255, 255, 255, 0.06); /*[cite: 8] */
+  position: relative; 
+  overflow: hidden; /*[cite: 8] */
+}
+#vehicle-stage svg { position: absolute; inset: 0; z-index: 1; }
+
+#vehicle-stats {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  padding: 10px 14px; background: rgba(4, 6, 12, 0.7);
+  border: 1px solid var(--card-border); border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+}
+.stat-item { display: flex; flex-direction: column; align-items: center; border-right: 1px solid rgba(255,255,255,0.04); }
+.stat-item:last-child { border-right: none; }
+.stat-label { font-family: var(--font-display); font-size: 8px; color: var(--gray-400); margin-bottom: 2px; }
+.stat-value { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--white); }
+.stat-value.highlight { color: var(--green); }
+.stat-unit { font-size: 9px; color: var(--gray-400); margin-left: 1px; }
+.stat-icon { width: 16px; height: 16px; margin-bottom: 1px; }
+
+/* ══════════════════════════════════════════
+   HIGH FIDELITY GLASS HUD CALLOUTS
+══════════════════════════════════════════ */
+.vehicle-callout {
+  position: absolute;
+  background: rgba(4, 8, 16, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-family: var(--font-display);
+  pointer-events: none;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+.callout-title { font-size: 8px; color: var(--gray-400); letter-spacing: 0.06em; margin-bottom: 1px; }
+.callout-value { font-size: 12px; font-weight: 700; }
+.callout-alert { font-size: 9px; color: var(--gray-400); margin-top: 1px; }
+
+/* ══════════════════════════════════════════
+   RIGHT PANEL UTILITIES
+══════════════════════════════════════════ */
+.warnings-list { display: flex; flex-direction: column; gap: 4px; min-height: 48px; }
+.warning-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: var(--radius-sm); background: rgba(255,59,48,0.05); border: 1px solid rgba(255,59,48,0.15); font-size: 11px; color: var(--red); }
+.warning-item.warn-yellow { background: rgba(255,217,61,0.05); border-color: rgba(255,217,61,0.15); color: var(--yellow); }
+
+.tyre-status-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
+.tyre-slot { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.tyre-slot-label { font-family: var(--font-display); font-size: 8px; color: var(--gray-400); }
+.tyre-oval { width: 24px; height: 40px; border-radius: var(--radius-md); border: 2.5px solid; transition: all var(--transition-normal); }
+.tyre-oval.status-good { border-color: var(--green); background: rgba(0,255,127,0.04); }
+.tyre-oval.status-warning { border-color: var(--yellow); background: rgba(255,217,61,0.04); }
+.tyre-oval.status-critical { border-color: var(--red); background: rgba(255,59,48,0.06); }
+.tyre-slot-status { font-family: var(--font-display); font-size: 9px; font-weight: 700; }
+
+.sysinfo-list { display: flex; flex-direction: column; gap: 4px; }
+.sysinfo-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 10px; }
+.sysinfo-row:last-child { border-bottom: none; }
+.sysinfo-key { color: var(--gray-400); font-family: var(--font-mono); }
+.sysinfo-val { color: var(--gray-200); font-family: var(--font-mono); font-weight: 600; }
+
+/* ══════════════════════════════════════════
+   CHARTS ROW
+══════════════════════════════════════════ */
+.chart-card { padding: 10px 14px; }
+.chart-title { font-family: var(--font-display); font-size: 9px; color: var(--gray-400); margin-bottom: 4px; letter-spacing: 0.05em; }
+.chart-canvas-wrap { position: relative; height: 75px; }
+
+#footer { grid-column: 1 / -1; display: flex; justify-content: space-between; padding: 6px 24px; background: #020408; border-top: 1px solid rgba(255,255,255,0.04); font-family: var(--font-mono); font-size: 9px; color: var(--gray-400); }
+.footer-segment { display: flex; align-items: center; gap: 14px; }
+.footer-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+.footer-item { display: flex; align-items: center; gap: 4px; }

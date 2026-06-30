@@ -1,0 +1,242 @@
+/* ============================================================
+   SMART TYRE INTELLIGENCE ECU — animation.css
+   All keyframe animations and animation utility classes
+   ============================================================ */
+
+/* ── Fade & Slide ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Pulse & Glow ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes glowBlue {
+  0%, 100% { box-shadow: 0 0 10px rgba(0,191,255,0.3), 0 0 20px rgba(0,191,255,0.1); }
+  50%       { box-shadow: 0 0 20px rgba(0,191,255,0.6), 0 0 40px rgba(0,191,255,0.2); }
+}
+
+@keyframes glowGreen {
+  0%, 100% { box-shadow: 0 0 10px rgba(0,255,127,0.3), 0 0 20px rgba(0,255,127,0.1); }
+  50%       { box-shadow: 0 0 20px rgba(0,255,127,0.6), 0 0 40px rgba(0,255,127,0.2); }
+}
+
+@keyframes glowRed {
+  0%, 100% { box-shadow: 0 0 12px rgba(255,59,48,0.4), 0 0 24px rgba(255,59,48,0.2); }
+  50%       { box-shadow: 0 0 24px rgba(255,59,48,0.8), 0 0 48px rgba(255,59,48,0.4); }
+}
+
+@keyframes glowOrange {
+  0%, 100% { box-shadow: 0 0 10px rgba(255,140,0,0.3), 0 0 20px rgba(255,140,0,0.1); }
+  50%       { box-shadow: 0 0 20px rgba(255,140,0,0.6), 0 0 40px rgba(255,140,0,0.2); }
+}
+
+/* ── Warning Blink ── */
+@keyframes warnBlink {
+  0%, 100% { opacity: 1; }
+  40%       { opacity: 0.3; }
+}
+
+/* ── Dot Blink ── */
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* ── Spin ── */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spinReverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+/* ── Number Count Up ── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Smoke Drift ── */
+@keyframes smokeDrift {
+  0%   { opacity: 0.7; transform: translateY(0) scale(0.5); }
+  100% { opacity: 0; transform: translateY(-40px) scale(2.5); }
+}
+
+/* ── Road Scroll ── */
+@keyframes roadScroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(80px); }
+}
+
+/* ── Lane Dash Scroll ── */
+@keyframes laneDash {
+  from { transform: translateY(-80px); }
+  to   { transform: translateY(80px); }
+}
+
+/* ── Cloud Drift ── */
+@keyframes cloudDrift {
+  from { transform: translateX(20px); }
+  to   { transform: translateX(-120%); }
+}
+
+/* ── Tree Scroll ── */
+@keyframes treeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-200px); }
+}
+
+/* ── Mountain Parallax ── */
+@keyframes mountainScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-60px); }
+}
+
+/* ── Car Suspension Bob ── */
+@keyframes suspensionBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-1px); }
+}
+
+/* ── Vibration Shake ── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-2px) rotate(-0.3deg); }
+  40%       { transform: translateX(2px)  rotate(0.3deg); }
+  60%       { transform: translateX(-1px); }
+  80%       { transform: translateX(1px); }
+}
+
+@keyframes shakeStrong {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  15%       { transform: translateX(-3px) translateY(-1px) rotate(-0.5deg); }
+  30%       { transform: translateX(3px)  translateY(1px)  rotate(0.5deg); }
+  45%       { transform: translateX(-2px) translateY(0); }
+  60%       { transform: translateX(2px)  translateY(-1px); }
+  75%       { transform: translateX(-1px) translateY(1px); }
+}
+
+/* ── Wheel Wobble ── */
+@keyframes wheelWobble {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  25%       { transform: rotate(-3deg) translateX(2px); }
+  75%       { transform: rotate(3deg) translateX(-2px); }
+}
+
+/* ── Headlight Flicker ── */
+@keyframes headlightPulse {
+  0%, 100% { opacity: 0.85; }
+  50%       { opacity: 0.65; }
+}
+
+/* ── Card Entry ── */
+.anim-fade-in       { animation: fadeIn 0.5s ease both; }
+.anim-slide-left    { animation: slideInLeft 0.4s ease both; }
+.anim-slide-right   { animation: slideInRight 0.4s ease both; }
+.anim-slide-up      { animation: slideInUp 0.4s ease both; }
+.anim-slide-down    { animation: slideInDown 0.4s ease both; }
+
+/* Staggered delays */
+.delay-1 { animation-delay: 0.05s; }
+.delay-2 { animation-delay: 0.10s; }
+.delay-3 { animation-delay: 0.15s; }
+.delay-4 { animation-delay: 0.20s; }
+.delay-5 { animation-delay: 0.25s; }
+
+/* ── Glow State Classes ── */
+.glow-blue   { animation: glowBlue 2s ease-in-out infinite; }
+.glow-green  { animation: glowGreen 2s ease-in-out infinite; }
+.glow-red    { animation: glowRed 1.2s ease-in-out infinite; }
+.glow-orange { animation: glowOrange 1.5s ease-in-out infinite; }
+
+/* ── Blinking States ── */
+.blink-warn { animation: warnBlink 1s ease-in-out infinite; }
+.dot-blink  { animation: dotBlink 1.4s ease-in-out infinite; }
+
+/* ── Spinning ── */
+.spin-slow   { animation: spin 3s linear infinite; }
+.spin-normal { animation: spin 1.5s linear infinite; }
+.spin-fast   { animation: spin 0.5s linear infinite; }
+
+/* ── Vehicle Shake Levels ── */
+.shake-mild   { animation: shake 0.4s ease-in-out infinite; }
+.shake-strong { animation: shakeStrong 0.2s ease-in-out infinite; }
+
+/* ── Smoke Particle ── */
+.smoke-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,180,180,0.6) 0%, rgba(100,100,100,0) 70%);
+  animation: smokeDrift 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ── Health score needle ── */
+@keyframes needleSwing {
+  from { transform: rotate(-90deg); }
+  to   { transform: rotate(var(--needle-deg, 0deg)); }
+}
+
+.needle-animated {
+  transform-origin: 50% 100%;
+  animation: needleSwing 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ── Warning card slide in/out ── */
+@keyframes warnSlideIn {
+  from { opacity: 0; transform: translateX(24px); max-height: 0; }
+  to   { opacity: 1; transform: translateX(0);    max-height: 60px; }
+}
+
+@keyframes warnSlideOut {
+  from { opacity: 1; transform: translateX(0);    max-height: 60px; }
+  to   { opacity: 0; transform: translateX(24px); max-height: 0; }
+}
+
+.warning-enter { animation: warnSlideIn 0.35s ease forwards; }
+.warning-exit  { animation: warnSlideOut 0.3s ease forwards; }
+
+/* ── Gauge Arc ── */
+@keyframes arcGrow {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: var(--arc-offset, 0); }
+}
+
+.arc-animated {
+  animation: arcGrow 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Wheel wobble visual cue: applied via subtle stroke pulse instead of transform
+   to avoid conflicting with JS-driven rotate/scale transform on .wheel-rotor */
+.wheel-wobble-active circle:first-child {
+  animation: warnBlink 0.3s ease-in-out infinite;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

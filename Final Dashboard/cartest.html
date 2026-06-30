@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html><head><style>
+body { background:#0a0e16; margin:0; display:flex; align-items:center; justify-content:center; height:100vh; }
+svg { border: 1px solid #333; }
+</style></head>
+<body>
+<svg viewBox="0 0 400 260" width="800" height="520" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="260" fill="#0a0e16"/>
+  <!-- ground line -->
+  <line x1="0" y1="210" x2="400" y2="210" stroke="#222" stroke-width="1"/>
+
+  <g transform="translate(200, 145)">
+    <!-- shadow -->
+    <ellipse cx="0" cy="68" rx="128" ry="11" fill="#000" opacity="0.5"/>
+
+    <!-- REAR WHEELS (peek out below body) -->
+    <g transform="translate(-98, 38)">
+      <circle r="27" fill="#1c1c1c" stroke="#383838" stroke-width="3"/>
+      <circle r="14" fill="#3a3a3a" stroke="#5a5a5a" stroke-width="1"/>
+      <g stroke="#6a6a6a" stroke-width="1.6" stroke-linecap="round">
+        <line x1="0" y1="-12" x2="0" y2="-5"/>
+        <line x1="0" y1="12" x2="0" y2="5"/>
+        <line x1="-12" y1="0" x2="-5" y2="0"/>
+        <line x1="12" y1="0" x2="5" y2="0"/>
+      </g>
+      <circle r="4" fill="#888"/>
+    </g>
+    <g transform="translate(98, 38)">
+      <circle r="27" fill="#1c1c1c" stroke="#383838" stroke-width="3"/>
+      <circle r="14" fill="#3a3a3a" stroke="#5a5a5a" stroke-width="1"/>
+      <g stroke="#6a6a6a" stroke-width="1.6" stroke-linecap="round">
+        <line x1="0" y1="-12" x2="0" y2="-5"/>
+        <line x1="0" y1="12" x2="0" y2="5"/>
+        <line x1="-12" y1="0" x2="-5" y2="0"/>
+        <line x1="12" y1="0" x2="5" y2="0"/>
+      </g>
+      <circle r="4" fill="#888"/>
+    </g>
+
+    <!-- BODY: lower wide rounded rect, narrower than wheel track so wheels peek -->
+    <rect x="-108" y="6" width="216" height="46" rx="13" fill="#1c1f26" stroke="#343b48" stroke-width="1.5"/>
+
+    <!-- Upper cabin -->
+    <path d="M -74,6
+             C -74,-28 -56,-52 -18,-56
+             L 18,-56
+             C 56,-52 74,-28 74,6
+             Z"
+          fill="#1e2129" stroke="#343b48" stroke-width="1.5"/>
+
+    <!-- Rear windshield -->
+    <path d="M -59,2 C -57,-24 -42,-42 -13,-46 L 13,-46 C 42,-42 57,-24 59,2
+             L 47,-6 C 38,-22 22,-32 0,-32 C -22,-32 -38,-22 -47,-6 Z"
+          fill="#0a1018" stroke="#2a3140" stroke-width="1"/>
+
+    <!-- roof highlight -->
+    <ellipse cx="0" cy="-40" rx="34" ry="4.5" fill="#2e3544" opacity="0.5"/>
+
+    <!-- Taillights: slim wraparound shapes flush with body corners -->
+    <path d="M -108,14 C -103,10 -94,10 -89,14 L -89,34 C -94,38 -103,38 -108,34 Z"
+          fill="#FF3B30"/>
+    <path d="M 108,14 C 103,10 94,10 89,14 L 89,34 C 94,38 103,38 108,34 Z"
+          fill="#FF3B30"/>
+    <!-- taillight inner highlight -->
+    <path d="M -104,16 C -101,14 -96,14 -93,16" stroke="#ff8a82" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M 104,16 C 101,14 96,14 93,16" stroke="#ff8a82" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+    <!-- bumper strip -->
+    <rect x="-103" y="48" width="206" height="9" rx="4" fill="#101216" stroke="#1e2128" stroke-width="1"/>
+
+    <!-- license plate -->
+    <rect x="-20" y="24" width="40" height="13" rx="2" fill="#0d0f12" stroke="#2a2e36" stroke-width="1"/>
+
+    <!-- exhausts -->
+    <ellipse cx="36" cy="54" rx="6.5" ry="3.6" fill="#222" stroke="#444" stroke-width="1"/>
+    <ellipse cx="55" cy="54" rx="6.5" ry="3.6" fill="#222" stroke="#444" stroke-width="1"/>
+  </g>
+</svg>
+</body></html>
