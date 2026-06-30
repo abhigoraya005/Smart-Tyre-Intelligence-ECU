@@ -1,358 +1,335 @@
-# 🧩 Software Modules
+# 🚗 Smart Tyre Intelligence ECU using STM32
 
-The firmware is designed using a modular architecture where every subsystem is implemented independently for better scalability and maintainability.
+> **An Automotive-Inspired Embedded ECU for Real-Time Tyre Health Monitoring, Fault Detection, Warning Generation, Predictive Maintenance, and Interactive Dashboard Visualization**
 
----
+<p align="center">
 
-## 🖥 ECU Manager
+![STM32](https://img.shields.io/badge/STM32F103C8T6-Blue_Pill-blue)
+![Language](https://img.shields.io/badge/Language-Embedded_C-success)
+![IDE](https://img.shields.io/badge/IDE-STM32CubeIDE-orange)
+![Simulation](https://img.shields.io/badge/Simulation-PICSimLab-red)
+![Dashboard](https://img.shields.io/badge/Dashboard-HTML5%20%7C%20CSS3%20%7C%20JavaScript-purple)
+![Architecture](https://img.shields.io/badge/Architecture-Modular%20ECU-brightgreen)
+![Status](https://img.shields.io/badge/Status-In%20Development-success)
 
-The ECU Manager acts as the main controller of the firmware.
-
-### Responsibilities
-
-- Initializes all software modules
-- Executes the main application loop
-- Controls complete firmware execution
-- Coordinates communication between modules
-
----
-
-## 🌡 Temperature Module
-
-### Responsibilities
-
-- Reads ADC Channel
-- Converts ADC values into Celsius
-- Filters noisy values
-- Provides temperature data to Sensor Manager
-
-### Output
-
-- Temperature (°C)
+</p>
 
 ---
 
-## 🛞 Pressure Module
+# 📖 Project Overview
 
-### Responsibilities
+Modern automobiles contain dozens of **Electronic Control Units (ECUs)** responsible for monitoring, controlling, and protecting critical vehicle systems.
 
-- Reads ADC Channel
-- Converts ADC values into PSI
-- Validates sensor range
+Tyres are among the most important safety components because they directly influence:
 
-### Output
+- Vehicle Stability
+- Braking Performance
+- Ride Comfort
+- Fuel Efficiency
+- Handling
+- Driver Safety
 
-- Pressure (PSI)
+A damaged or unhealthy tyre can significantly increase stopping distance, reduce grip, and lead to catastrophic failures.
 
----
+This project develops a **Smart Tyre Intelligence ECU** using the **STM32F103C8T6 Blue Pill** microcontroller.
 
-## 📳 Vibration Module
+The ECU continuously monitors multiple tyre-related parameters through ADC inputs, processes sensor data using modular embedded software, evaluates tyre health, detects faults, generates warnings, predicts maintenance requirements, and visualizes the complete system through both a UART terminal and a professional HTML dashboard.
 
-### Responsibilities
-
-- Reads ADC value
-- Converts into vibration level (g)
-
-### Output
-
-- Vibration (g)
+The firmware is designed using an **Automotive-Inspired Layered Software Architecture**, making it scalable, reusable, and easy to extend with future automotive technologies such as CAN, FreeRTOS, AUTOSAR-inspired layers, TPMS, and IoT connectivity.
 
 ---
 
-## 🚚 Load Module
+# 🎯 Project Objectives
 
-### Responsibilities
+The primary objectives of this project are:
 
-- Reads ADC value
-- Calculates tyre load percentage
-
-### Output
-
-- Load (%)
-
----
-
-## 📡 Sensor Manager
-
-The Sensor Manager combines all sensor readings into one centralized data structure.
-
-### Responsibilities
-
-- Store latest sensor values
-- Update every ECU cycle
-- Provide data to upper software layers
-
-### Managed Sensors
-
-- Temperature
-- Pressure
-- Vibration
-- Load
+- Real-Time Temperature Monitoring
+- Real-Time Pressure Monitoring
+- Real-Time Vibration Monitoring
+- Real-Time Load Monitoring
+- ADC-Based Sensor Acquisition
+- Tyre Health Score Calculation
+- Tyre Status Classification
+- Fault Detection
+- Safety Warning Generation
+- Predictive Maintenance Recommendation
+- UART Diagnostic Dashboard
+- Interactive HTML Dashboard
+- Modular Embedded Software Architecture
 
 ---
 
-## ❤️ Tyre Health Manager
+# ✨ Project Highlights
 
-This module evaluates the current tyre condition.
+✔ Modular Embedded Software Design
 
-### Inputs
+✔ Automotive-Inspired ECU Architecture
 
-- Temperature
-- Pressure
-- Vibration
-- Load
+✔ STM32 HAL Driver Development
 
-### Outputs
+✔ ADC Multi-Sensor Monitoring
 
-- Health Score (0–100%)
-- Tyre Status
+✔ Sensor Manager Framework
 
-### Status Levels
+✔ Tyre Health Calculation Engine
 
-- Excellent
-- Good
-- Warning
-- Critical
+✔ Fault Detection System
 
----
+✔ Warning Generation Module
 
-## ⚠ Fault Manager
+✔ Predictive Maintenance Engine
 
-Detects abnormal operating conditions.
+✔ UART Diagnostic Dashboard
 
-### Supported Faults
+✔ Interactive HTML Dashboard
 
-- Over Temperature
-- Low Pressure
-- High Pressure
-- High Vibration
-- Over Load
+✔ PICSimLab Simulation
+
+✔ Professional GitHub Documentation
 
 ---
 
-## 🚨 Warning Manager
+# 🛠 Hardware Components
 
-Generates user-friendly warnings based on detected faults.
-
-### Warning Levels
-
-- Normal
-- Warning
-- Critical
+| Component | Description |
+|-----------|-------------|
+| STM32F103C8T6 | Main ECU Controller |
+| PICSimLab | Embedded Simulation Platform |
+| Potentiometers | Simulated ADC Sensors |
+| UART Virtual Terminal | Serial Dashboard |
+| ADC Channels | Sensor Inputs |
 
 ---
 
-## 🔧 Predictive Maintenance
+# 💻 Software Stack
 
-Analyzes the overall tyre condition and recommends maintenance.
+| Software | Purpose |
+|----------|---------|
+| STM32CubeIDE | Firmware Development |
+| STM32 HAL Drivers | Peripheral Drivers |
+| Embedded C | Firmware Programming |
+| PICSimLab | Hardware Simulation |
+| Git | Version Control |
+| GitHub | Repository Management |
+| HTML | Dashboard UI |
+| CSS | Dashboard Styling |
+| JavaScript | Interactive Dashboard |
 
-### Possible Recommendations
+---
 
-- Replace Tyre
+# 🚀 Features
+
+## Sensor Monitoring
+
+- Temperature Monitoring
+- Pressure Monitoring
+- Vibration Monitoring
+- Load Monitoring
+
+---
+
+## ECU Processing
+
+- ADC Sampling
+- Sensor Conversion
+- Sensor Manager
+- Tyre Health Analysis
+- Health Score Calculation
+
+---
+
+## Safety System
+
+- Fault Detection
+- Warning Generation
+- Critical Alert Detection
+
+---
+
+## Predictive Maintenance
+
+- Tyre Replacement Suggestion
 - Pressure Inspection
-- Wheel Balancing
+- Wheel Balancing Recommendation
 - Suspension Inspection
-- Continue Monitoring
 
 ---
 
-# 📡 UART Diagnostic Dashboard
+## Dashboard
 
-The firmware continuously transmits ECU information over UART.
-
-The dashboard displays
-
-- ECU Status
-- Health Score
-- Temperature
-- Pressure
-- Vibration
-- Load
-- Active Faults
-- Active Warnings
-- Predictive Maintenance
-- Firmware Information
+- Professional UART Dashboard
+- Interactive HTML Dashboard
+- Live Sensor Visualization
+- Vehicle Health Monitoring
 
 ---
 
-## Sample UART Output
+# 🏗 Software Architecture
 
 ```text
-========================================================
+                      Smart Tyre Intelligence ECU
 
-SMART TYRE INTELLIGENCE ECU
+                                │
+                                │
+        ┌──────────────────────────────────────────────┐
+        │                  ECU Manager                 │
+        └──────────────────────────────────────────────┘
+                                │
+ ┌──────────────┬───────────────┬───────────────┬──────────────┐
+ │              │               │               │              │
+ ▼              ▼               ▼               ▼              ▼
 
-========================================================
+Sensor       Tyre          Fault           Warning      Predictive
+Manager      Health        Manager         Manager      Maintenance
 
-ECU STATUS : GOOD
+ │
+ │
+ ├──────────────┐
+ │              │
+ ▼              ▼
 
-Health Score : 92 %
+Temperature    Pressure
+Vibration      Load
 
-Temperature : 41.8 C
+ │
+ ▼
 
-Pressure : 32.4 PSI
+UART Dashboard
 
-Vibration : 0.82 g
+ │
+ ▼
 
-Load : 38 %
-
-Faults : NONE
-
-Warnings : NONE
-
-Maintenance : Continue Monitoring
-
-========================================================
+HTML Dashboard
 ```
 
 ---
 
-# 🖥 Interactive HTML Dashboard
-
-In addition to the UART dashboard, the project also includes a browser-based interactive dashboard.
-
-## Dashboard Features
-
-- Live Sensor Cards
-- Animated Vehicle Visualization
-- Health Gauge
-- Active Fault Panel
-- Active Warning Panel
-- Predictive Maintenance Panel
-- Real-Time Charts
-- Professional Automotive UI
-
----
-
-## Vehicle Visualization
-
-The dashboard includes an animated vehicle scene.
-
-Vehicle animations include
-
-- Wheel Rotation
-- Temperature Based Tyre Color
-- Pressure Based Tyre Size
-- Suspension Movement
-- Vehicle Shake
-- Smoke Effects
-- Highway Animation
-- Live Sensor Callouts
-
----
-
-# 📷 Project Gallery
-
-## UART Dashboard
-
-> *(Insert UART Dashboard Screenshot Here)*
-
-```
-images/uart_dashboard.png
-```
-
----
-
-## HTML Dashboard
-
-> *(Insert HTML Dashboard Screenshot Here)*
-
-```
-images/html_dashboard.png
-```
-
----
-
-## Vehicle Animation
-
-> *(Insert Vehicle Visualization Screenshot Here)*
-
-```
-images/vehicle_dashboard.png
-```
-
----
-
-# 📂 Repository Structure
+# 📊 Automotive ECU Layered Architecture
 
 ```text
-Smart_Tyre_Intelligence_ECU
++------------------------------------------------------------+
+|                 HTML Dashboard Layer                       |
++------------------------------------------------------------+
 
-│
+                 UART Communication Layer
 
-├── Smart_Tyre_ECU_Day01
-├── Smart_Tyre_ECU_Day02
-├── Smart_Tyre_ECU_Day03
-├── Smart_Tyre_ECU_Day04
-├── Smart_Tyre_ECU_Day05
-├── Smart_Tyre_ECU_Day06
-├── Smart_Tyre_ECU_Day07
-├── Smart_Tyre_ECU_Day08
-├── Smart_Tyre_ECU_Day09
-├── Smart_Tyre_ECU_Day10
-├── Smart_Tyre_ECU_Day11
-├── Smart_Tyre_ECU_Day12
-├── Smart_Tyre_ECU_Day13
-├── Smart_Tyre_ECU_Day14
++------------------------------------------------------------+
+|               ECU Application Layer                        |
+|------------------------------------------------------------|
+| ECU Manager                                                |
+| Sensor Manager                                             |
+| Tyre Health Manager                                        |
+| Fault Manager                                              |
+| Warning Manager                                            |
+| Predictive Maintenance                                     |
++------------------------------------------------------------+
 
-├── Final_Dashboard
-│   ├── index.html
-│   ├── css
-│   ├── js
-│   ├── assets
-│   └── images
++------------------------------------------------------------+
+|                    Driver Layer                            |
+|------------------------------------------------------------|
+| ADC Driver                                                 |
+| UART Driver                                                |
+| GPIO Driver                                                |
+| STM32 HAL Drivers                                          |
++------------------------------------------------------------+
 
-├── README.md
-
-└── LICENSE
++------------------------------------------------------------+
+|                   Hardware Layer                           |
+|------------------------------------------------------------|
+| STM32F103C8T6                                              |
+| ADC Sensors                                                |
+| UART                                                       |
+| GPIO                                                       |
+| PICSimLab                                                  |
++------------------------------------------------------------+
 ```
 
 ---
 
-# 🚀 Development Progress
+# 🔄 Runtime Execution Flow
 
-| Day | Module | Status |
-|-----:|---------------------------|:------:|
-| 01 | Project Setup | ✅ |
-| 02 | UART Driver | ✅ |
-| 03 | Temperature Sensor | ✅ |
-| 04 | ADC Driver | ✅ |
-| 05 | Pressure Sensor | ✅ |
-| 06 | Vibration Sensor | ✅ |
-| 07 | Load Sensor | ✅ |
-| 08 | Sensor Manager | ✅ |
-| 09 | Tyre Health Module | ✅ |
-| 10 | Fault Manager | ✅ |
-| 11 | Warning Manager | ✅ |
-| 12 | Predictive Maintenance | ✅ |
-| 13 | UART Dashboard | ✅ |
-| 14 | Architecture Refinement | ✅ |
-| 15 | HTML Dashboard | 🚧 |
-| 16 | Live Charts | 🚧 |
-| 17 | Vehicle Animation | 🚧 |
-| 18 | CAN Communication | ⏳ |
-| 19 | FreeRTOS | ⏳ |
-| 20 | TPMS Integration | ⏳ |
+```text
+                     POWER ON
+
+                         │
+                         ▼
+
+                STM32 Initialization
+
+                         │
+                         ▼
+
+                 Driver Initialization
+
+                         │
+                         ▼
+
+                 ECU Module Initialization
+
+                         │
+                         ▼
+
+                 Read ADC Sensor Values
+
+                         │
+                         ▼
+
+              Convert Physical Parameters
+
+                         │
+                         ▼
+
+                  Update Sensor Manager
+
+                         │
+                         ▼
+
+               Calculate Tyre Health Score
+
+                         │
+                         ▼
+
+                 Detect Active Faults
+
+                         │
+                         ▼
+
+               Generate Safety Warnings
+
+                         │
+                         ▼
+
+            Predict Maintenance Requirement
+
+                         │
+                         ▼
+
+               Update UART Dashboard
+
+                         │
+                         ▼
+
+             Update HTML Dashboard
+
+                         │
+                         ▼
+
+                  Repeat Forever
+```
 
 ---
 
-# 📊 Current Project Status
+# 📌 STM32 Pin Configuration
 
-| Feature | Status |
-|-----------------------------|:------:|
-| ADC Driver | ✅ |
-| UART Communication | ✅ |
-| Sensor Manager | ✅ |
-| Tyre Health Calculation | ✅ |
-| Fault Detection | ✅ |
-| Warning Generation | ✅ |
-| Predictive Maintenance | ✅ |
-| UART Dashboard | ✅ |
-| HTML Dashboard | 🚧 |
-| Vehicle Animation | 🚧 |
-| CAN Communication | ⏳ |
-| FreeRTOS | ⏳ |
-| Cloud Monitoring | ⏳ |
+| Peripheral | STM32 Pin |
+|------------|-----------|
+| Temperature Sensor | PA0 |
+| Pressure Sensor | PA1 |
+| Vibration Sensor | PA2 |
+| Load Sensor | PA3 |
+| UART TX | PA9 |
+| UART RX | PA10 |
+| Status LED | PC13 |
 
 ---
 # 🧩 Software Modules
